@@ -1,0 +1,21 @@
+{% load bootstrap4 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hidromeleiros</title>
+    {% bootstrap_css %}
+</head>
+<body>
+    <p></p>
+    <div class="container">
+        <form method="get" autocomplete="off">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+             <input type="submit" value="Enviar">
+        </form>
+    <h1>Porcentagem de alcóol: {{ abv }}%</h1>
+
+</body>
+</html>
