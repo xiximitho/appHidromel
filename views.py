@@ -22,17 +22,13 @@ def calculoabv(request):
                 listaOG=[]
                 listaOG[:0] = str(og)
                 #lista[]
-                print(listaOG[-2])
                 listaOG.pop(-2)
                 listaOG.insert(1,'.')
                 del listaOG[-1]
                 og = float((listaString(listaOG)))
-            if form.data['fg'].count('.') == 0:
-                # ------------------------------------- FG ------- #
+            if form.data['fg'].count('.') == 0:  #se nao houver ponto no FG
                 listaFG = []
                 listaFG[:0] = str(fg)
-                # lista[]
-                print(listaFG[-2])
                 listaFG.pop(-2)
                 listaFG.insert(1, '.')
                 del listaFG[-1]
