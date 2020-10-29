@@ -1,21 +1,50 @@
 {% load bootstrap4 %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Hidromeleiros</title>
-    {% bootstrap_css %}
+    {% bootstrap_css %} <!-- CARREGANDO CSS BOOTSTRAP-->
+    {% bootstrap_messages %} <!-- Mostra django.contrib.messages como um alerta Bootstrap -->
+    <meta name="theme-color" content="#ffffff">
 </head>
-<body>
-    <p></p>
-    <div class="container">
-        <form method="get" autocomplete="off">
-            {% csrf_token %}
-            {% bootstrap_form form %}
-            {% buttons submit='Enviar' %} {% endbuttons %}
-        </form>
-    <h1>Porcentagem de alcóol: {{ abv }}%</h1>
+<body class="text-center">
+    <div class="container-md d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">Hidromeleiro</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link" href="#">Receitas</a>
+                    <a class="nav-link" href="#">Calculo de &Aacute;lcool</a>
+                    <a class="nav-link" href="#">Corre&ccedil;&atilde;o de Temperatura</a>
+                </nav>
+            </div>
+        </header>
+        <!-- MAIN -->
 
+        <main role="main" class="inner cover">
+            <h1 class="cover-heading">Cálculo ABV.</h1>
+            <p class="text">_____</p>
+            <div class="container-fluid inner" align="center">
+                <p class="lead" style="max-width:600px">Calcule a porcentagem de &aacute;lcool de seu hidromel utilizando a densidade inicial (OG) com a diferen&ccedil;a da densidade final (FG) </p>
+                <form method="get" autocomplete="off" style="width: 300px">
+                    {% csrf_token %}
+                    {% bootstrap_form form layout="row"%}
+                    {% buttons submit='Calcular' %} {% endbuttons %}
+                </form>
+                </div>
+                <p class="h2">Porcentagem  de &aacute;lcool: {{ abv }}%</p>
+        </main>
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Desenvolvido por <a href="https://getbootstrap.com/">Felipe Mattes</a></p>
+            </div>
+        </footer>
+    </div>
+<!-- <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">-->
+{% bootstrap_javascript jquery='full' %} <!-- CARREGANDO JS DO BOOTSTRAP-->
 </body>
 </html>
+
