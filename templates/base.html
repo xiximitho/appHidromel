@@ -1,0 +1,38 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+    {% bootstrap_css %} <!-- CARREGANDO CSS BOOTSTRAP-->
+    {% bootstrap_messages %} <!-- Mostra django.contrib.messages como um alerta Bootstrap -->
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body class="text-center">
+    <div class="container-md d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h1 class="masthead-brand" align="center">Hidromeleiro</h1>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" href="{% url "home" %}">Home </a>
+                    <a class="nav-link" href="{% url "receitas" %}">Receitas</a>
+                    <a class="nav-link" href="{% url "calculoabv" %}">Calculo de &Aacute;lcool</a>
+                    <a class="nav-link" href="#">Corre&ccedil;&atilde;o de Temperatura</a>
+                </nav>
+            </div>
+        </header>
+
+         <main role="main" class="inner cover">
+            <h1 class="cover-heading">{% block titlehtml %}{% endblock %}</h1>
+            <p>
+                _ _ _ _ _
+            </p>
+            <div class="container-fluid inner" align="center" id="conteudo">
+                {% block conteudo %}{% endblock %}
+            </div>
+        </main>
+    </div>
+{% bootstrap_javascript jquery='full' %}
+</body>
+</html>

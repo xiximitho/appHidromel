@@ -4,6 +4,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.calculoabv), #pagina principal
+    path(r'',views.teste, name='home'),
+    path(r'/receitas',views.receitas, name='receitas'),
+    path(r'/calculoabv', views.calculoabv, name='calculoabv')
+    #path('', views.calculoabv), #pagina principal
 
 ]

@@ -9,6 +9,12 @@ def listaString(s):
         str1 += indice
     return str1
 
+def teste(request):
+    return render(request, "base.html")
+
+def receitas(request):
+    return render(request, "receitas.html")
+
 # Create your views here.
 def calculoabv(request):
     abv = 0.0
