@@ -8,9 +8,11 @@
     <form method="get" autocomplete="off" style="width: 300px">
         {% csrf_token %}
         {% bootstrap_form form layout="row"%}
-        {% buttons submit='Calcular' %} {% endbuttons %}
+        {% buttons %}
+            <button type="submit" class="btn btn-warning">Calcular</button>
+        {% endbuttons %}
     </form>
-    </div>
+
     <p class="h2">Porcentagem  de &aacute;lcool: {{ abv }}%</p>
 
 {% endblock %}

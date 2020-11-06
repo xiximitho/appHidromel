@@ -51,3 +51,7 @@ def calculoabv(request):
     }
 
     return render(request, 'calculoabv.html', context)
+
+
+def designteste(request):
+    return render(request,'designteste.html')
